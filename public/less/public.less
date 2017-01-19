@@ -1,0 +1,43 @@
+/* This stylesheet is used to style the public-facing components of the plugin. */
+@import "less-mixins";
+@import "flex-grid";
+
+// Override parent class
+body.colors-dark,
+.colors-dark .navigation-top,
+.colors-dark .main-navigation ul {
+	background: lighten(@black, 4%);
+	// background: @graydark;
+}
+
+.some-cool-class {
+	.font-size(4);
+}
+
+.vis-container {
+	padding: 1.5em;
+	margin-bottom: 2em;
+	border-radius: .2em;
+	// background-color: hsla(236, 31%, 55%, 0.15);
+	background-color: fadeout(@driftwood, 85%);
+}
+
+// When using the dark theme, lighten the graph annotations.
+.colors-dark {
+	.axis {
+		path.domain,
+		.tick line {
+			stroke: white;
+		}
+	}
+	.vis-container text {
+		fill: white;
+	}
+}
+
+@media screen and (min-width:600px), print {
+}
+@media screen and (min-width:768px), print {
+}
+@media screen and (min-width:1000px), print {
+}
